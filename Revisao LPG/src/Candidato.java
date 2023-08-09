@@ -13,7 +13,7 @@ public class Candidato {
         String[] habilidades = {"Java", "Front-end", "Python", "Back-end", "Gerência de projetos"};
 
         for (int i = 0; i < habilidades.length; i++)
-            System.out.println(habilidades[i] + " -> " + habilidades[i]);
+            System.out.println(habilidades[i] + " -> " + this.habilidades[i]);
         System.out.println("-------------------------");
     }
 
