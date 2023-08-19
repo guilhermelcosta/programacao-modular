@@ -1,10 +1,7 @@
 package classes;
 
-<<<<<<< HEAD
 import interfaces.ItemEstoque;
 
-=======
->>>>>>> 519705ced93cd5358f0eaa0ec378809b959689a9
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
