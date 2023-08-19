@@ -9,10 +9,10 @@ import java.util.List;
 
 public class Consulta {
 
-    private TipoConsulta tipoConsulta;
-    private LocalDate dataConsulta;
-    private Medico medico;
     private String[] medicacoesEmUso;
+    private LocalDate dataConsulta;
+    private TipoConsulta tipoConsulta;
+    private Medico medico;
     private Paciente paciente;
 
     public Consulta(TipoConsulta tipoConsulta, String dataConsulta, Medico medico, Paciente paciente, String[] medicacoesEmUso) throws RuntimeException {
@@ -45,6 +45,7 @@ public class Consulta {
         LocalDate novaDataConsulta = LocalDate.parse(dataConsulta, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
         if (!calendarioConsultas.contains(novaDataConsulta)) {
+
             medico.adicionarConsultaCalendario(dataConsulta);
             this.tipoConsulta = tipoConsulta;
             this.dataConsulta = novaDataConsulta;
@@ -54,7 +55,8 @@ public class Consulta {
             paciente.adicionarConsultaHistorico(this);
 
             System.out.println("\nConsulta marcada com sucesso!");
-        } else throw new RuntimeException("Data da consulta nao disponivel");
+        } else
+            throw new RuntimeException("Data da consulta nao disponivel");
 
         return novaDataConsulta;
     }
@@ -63,22 +65,26 @@ public class Consulta {
 
         List<LocalDate> calendarioConsultas = this.getMedico().getCalendarioConsultas();
         LocalDate novaDataConsulta = LocalDate.parse(dataConsulta, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        String novaDataConsultaString = novaDataConsulta.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         String dataConsultaAtualString = this.getDataConsulta().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         Medico medico = this.getMedico();
         Paciente paciente = this.getPaciente();
 
         if (!calendarioConsultas.contains(novaDataConsulta)) {
-            this.dataConsulta = marcarConsulta(this.getTipoConsulta(), novaDataConsultaString, this.getMedico(), this.getPaciente(), this.getMedicacoesEmUso());
+
+            this.dataConsulta = marcarConsulta(this.getTipoConsulta(), dataConsulta, medico, paciente, this.getMedicacoesEmUso());
             medico.removerConsultaCalendario(dataConsultaAtualString);
             paciente.removerConsultaHistorico(this);
-        } else throw new RuntimeException("\nData da consulta nao disponivel");
+
+        } else
+            throw new RuntimeException("\nData da consulta nao disponivel");
     }
 
     public void cancelarConsulta() {
+
         String dataConsulta = this.getDataConsulta().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         medico.removerConsultaCalendario(dataConsulta);
         paciente.removerConsultaHistorico(this);
+
         System.out.println("\nConsulta cancelada com sucesso!");
     }
 
