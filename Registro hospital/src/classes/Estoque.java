@@ -1,7 +1,11 @@
 package classes;
 
+<<<<<<< HEAD
 import interfaces.ItemEstoque;
 
+=======
+import java.awt.*;
+>>>>>>> 519705ced93cd5358f0eaa0ec378809b959689a9
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -99,9 +103,12 @@ public class Estoque {
 
         Equipamento equipamento = listaEquipamentos.get(posicaoNaLista);
 
+<<<<<<< HEAD
         if (quantidadeRemover == quantidadeAtual)
             listaEquipamentos.remove(equipamento);
 
+=======
+>>>>>>> 519705ced93cd5358f0eaa0ec378809b959689a9
         equipamento.setQuantidade(quantidadeAtual - quantidadeRemover);
     }
 
@@ -152,9 +159,12 @@ public class Estoque {
 
         Medicamento medicamento = listaMedicamentos.get(posicaoNaLista);
 
+<<<<<<< HEAD
         if (quantidadeRemover == quantidadeAtual)
             listaMedicamentos.remove(medicamento);
 
+=======
+>>>>>>> 519705ced93cd5358f0eaa0ec378809b959689a9
         medicamento.setQuantidade(quantidadeAtual - quantidadeRemover);
     }
 
