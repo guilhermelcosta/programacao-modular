@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Medico extends Paciente {
 
-    private String especialidade;
     private int anosExperiencia;
+    private String especialidade;
     private List<LocalDate> calendarioConsultas = new ArrayList<>();
 
     public Medico(String nome, String dataNascimento, String tipoSanguineo, String[] alergias, String especialidade, int anosExperiencia) {

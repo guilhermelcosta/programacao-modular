@@ -9,9 +9,9 @@ import java.util.List;
 public class Paciente {
 
     private String nome;
-    private LocalDate dataNascimento;
     private String tipoSanguineo;
     private String[] alergias;
+    private LocalDate dataNascimento;
     private List<Consulta> historicoConsultas = new ArrayList<>();
 
     public Paciente(String nome, String dataNascimento, String tipoSanguineo, String[] alergias) {
@@ -23,7 +23,7 @@ public class Paciente {
 
     public Paciente() {
         this.nome = "Nao informado";
-        this.dataNascimento = LocalDate.parse("01/01/1900", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        this.dataNascimento = LocalDate.of(1900, 1, 1);
         this.tipoSanguineo = "Nao informado";
         this.alergias = new String[]{};
     }
@@ -34,7 +34,7 @@ public class Paciente {
         System.out.println("Data de nascimento        -> " + this.dataNascimento);
         System.out.println("Tipo sanguineo            -> " + this.tipoSanguineo);
         System.out.println("Alergia                   -> " + Arrays.toString(this.alergias));
-        System.out.println("Historico de consultas-------");
+        System.out.println("Historico de consultas    -> ");
         this.historicoConsultas.forEach(Consulta::imprimir);
     }
 
