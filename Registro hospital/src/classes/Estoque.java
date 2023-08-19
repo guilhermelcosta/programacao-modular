@@ -152,6 +152,9 @@ public class Estoque {
 
         Medicamento medicamento = listaMedicamentos.get(posicaoNaLista);
 
+        if (quantidadeRemover == quantidadeAtual)
+            listaMedicamentos.remove(medicamento);
+
         medicamento.setQuantidade(quantidadeAtual - quantidadeRemover);
     }
 
