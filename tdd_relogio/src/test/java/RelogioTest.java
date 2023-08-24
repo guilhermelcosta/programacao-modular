@@ -10,7 +10,7 @@ public class RelogioTest {
     @Test
     @DisplayName("Validar hora")
     void validarHora() {
-        assertTrue(Relogio.validarHora(25, 40, 30));
+        assertTrue(Relogio.validarHora(27, 40, 30));
     }
 
 }
