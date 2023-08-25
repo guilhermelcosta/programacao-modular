@@ -20,9 +20,7 @@ public class RelogioTest {
     @Test
     @DisplayName("Validar construtor com hora incorreta")
     public void testeConstrutor_Incorreto() {
-        assertThrows(Exception.class, () -> {
-            new Relogio(25, 30, 45);
-        });
+        assertThrows(Exception.class, () -> new Relogio(25, 30, 45));
     }
 
     @Test

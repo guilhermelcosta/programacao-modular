@@ -75,9 +75,7 @@ public class Relogio {
     public void imprimir(String tipoImpressao) throws Exception {
 
         switch (tipoImpressao) {
-            case "24h" -> {
-                System.out.printf("%02d:%02d:%02d\n", hora, min, seg);
-            }
+            case "24h" -> System.out.printf("%02d:%02d:%02d\n", hora, min, seg);
             case "AM/PM" -> {
                 if (hora <= 12)
                     System.out.printf("%02d:%02d:%02d AM\n", hora, min, seg);
